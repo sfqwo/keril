@@ -1,0 +1,18 @@
+plugins {
+    id 'base'
+    id "com.github.node-gradle.node" version "3.1.1" apply false
+}
+
+group 'org.keril'
+version '1.0-SNAPSHOT'
+
+
+subprojects {
+  apply plugin: 'com.github.node-gradle.node'
+}
+repositories {
+    mavenCentral()
+}
+
+
+
