@@ -17,7 +17,6 @@ const authInterceptor = config => {
 $host.interceptors.request.use(
     config => {
         config.headers['Access-Control-Max-Age'] = 100
-        //config.headers["Content-Type"] = "application/x-www-form-urlencoded"
         return config
     },
     error => {

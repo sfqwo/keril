@@ -5,6 +5,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.css'
 import UserStore from './store/UserStore';
 import DeviceStore from './store/DeviceStore';
+import BasketStore from "./store/BasketStore";
 require('dotenv').config()
 
 export const Context = createContext(null)
@@ -12,7 +13,8 @@ export const Context = createContext(null)
 ReactDOM.render(
   <Context.Provider value= {{
     user: new UserStore(),
-    device: new DeviceStore()
+    device: new DeviceStore(),
+    basket: new BasketStore()
   }}>
     <App />
   </Context.Provider>,
