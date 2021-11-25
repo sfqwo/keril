@@ -16,7 +16,7 @@ const Shop = observer(() => {
     const createMarkup = () =>{
         const text = device.lineSearch ? ' ' + device.lineSearch : ''
         const orText = "По вашему запросу ничего не удалось найти"
-        return {__html: device.devices.length === 0 ?  orText : (device.lineSearch != '' ? 'По вашему запросу' + text + ' найдено:' : '')};
+        return {__html: device.devices.length === 0 ?  orText : (device.lineSearch !== '' ? 'По вашему запросу' + text + ' найдено:' : '')};
     }
 
     useEffect(() => {

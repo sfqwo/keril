@@ -4,7 +4,7 @@ import { useHistory} from "react-router-dom";
 import React, {useEffect, useState} from 'react';
 import star from '../assets/star.svg'
 import {BASKET_ROUTE, DEVICE_ROUTE} from "../utils/consts";
-import {addBasketDevice, deleteBasketDevice} from "../http/BasketApi";
+import {deleteBasketDevice} from "../http/BasketApi";
 
 const BasketItem = observer(({device}) => {
     const history = useHistory()

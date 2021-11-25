@@ -1,4 +1,4 @@
-const {Brand} = require('../models/models')
+const {Brand, Device, DeviceInfo} = require('../models/models')
 const ApiError = require('../error/ApiError')
 
 class BrandController{
@@ -11,6 +11,16 @@ class BrandController{
     async getAll(req, res) {
         const brands = await Brand.findAll();
         return res.json(brands)
+    }
+
+    async getOne(req, res) {
+        const {id} = req.params
+        const brand = await Brand.findOne(
+            {
+                where: {id},
+            },
+        )
+        return res.json(brand)
     }
 }
 

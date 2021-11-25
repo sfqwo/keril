@@ -8,9 +8,8 @@ import {observer} from "mobx-react-lite";
 
 const Basket = observer( () => {
     const {basket} = useContext(Context)
-    const [basketState, setBasketState] = useState(true)
+    //const [basketState, setBasketState] = useState(true)
     const [amount, setAmount] = useState(0)
-    const [deviceCount, setDeviceCount] = useState(0)
     let temp = 0
 
     useEffect(() => {
@@ -18,12 +17,12 @@ const Basket = observer( () => {
             const [totalCount] = data.slice(0,1)
             basket.setTotalCount(totalCount)
             basket.setDevices(data.slice(1))
-            setBasketState(false)
+            //setBasketState(false)
         })
     }, []);
 
-    useEffect(async () => {
-        await fetchBasketDevices(basket.page, 100).then(data => {
+    useEffect(() => {
+        fetchBasketDevices(basket.page, 100).then(data => {
             data.slice(1).map((el, index) => {
                 temp += el.price
                 setAmount(temp)
@@ -38,7 +37,7 @@ const Basket = observer( () => {
             const [totalCount] = data.slice(0,1)
             basket.setTotalCount(totalCount)
             basket.setDevices(data.slice(1))
-            setBasketState(false)
+            //setBasketState(false)
         })
     }, [basket.page, ]);
 

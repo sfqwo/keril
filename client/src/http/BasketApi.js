@@ -1,5 +1,4 @@
-import {$authHost, $host} from "./index";
-import jwt_decode from "jwt-decode";
+import {$authHost} from "./index";
 
 export const addBasketDevice = async (deviceId) => {
     const userId = localStorage.getItem('userId')
@@ -23,13 +22,5 @@ export const fetchBasketDevices = async (page, limit) => {
     const {data} = await $authHost.get('api/basket', {params: {
             userId, page, limit
         }})
-    return data
-}
-
-export const fetchOneBasketDevice = async (deviceId) => {
-    const userId = localStorage.getItem('userId')
-    const {data} = await $authHost.get('api/basket/' + deviceId, {
-            userId
-        })
     return data
 }
