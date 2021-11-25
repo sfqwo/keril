@@ -20,7 +20,7 @@ const NavBar = observer(() => {
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <div
-                        class="d-flex flex-row">
+                        className="d-flex flex-row">
                         <NavLink
                             style={{color: 'white'}}
                             onClick={() => history.push(SHOP_ROUTE)}
@@ -28,17 +28,17 @@ const NavBar = observer(() => {
                             KERIL
                         </NavLink>
                         <form
-                            class="form-inline"
+                            className="form-inline"
                         >
-                            <div class="btn-group d-flex justify-content-around">
+                            <div className="btn-group d-flex justify-content-around">
                                 <input
                                     type="text"
-                                    class="form-control"
+                                    className="form-control"
                                     placeholder="Название товара..."
                                     onChange={e => device.setLineSearch(e.target.value)}
                                 />
                                 <button
-                                    class="btn btn-outline-light"
+                                    className="btn btn-outline-light"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         device.setClickSearch(true)
