@@ -38,6 +38,8 @@ const CreateDevice = observer(({show, onHide}) => {
         formData.append('img', file)
         formData.append('brandId', device.selectedBrand.id)
         formData.append('typeId', device.selectedType.id)
+        let rat =  String(Math.floor(Math.random() * (5 - 1)) + 1);
+        formData.append('rating', rat)
         formData.append('info', JSON.stringify(info))
         createDevice(formData).then(data => onHide())
     }

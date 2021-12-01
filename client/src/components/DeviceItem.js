@@ -17,13 +17,12 @@ const DeviceItem = observer(({device}) => {
     }, [])
     const history = useHistory()
     return(
-        <Col md={3} className='ml-5' onClick={() => history.push(DEVICE_ROUTE + '/' + device.id)}>
+        <Col md={3} className='ml-5 d-flex justify-content-between m-auto' onClick={() => history.push(DEVICE_ROUTE + '/' + device.id)}>
             <Card 
-                style = {{width: 230, height: 400, cursor: 'pointer', border: 'light'}}
+                style = {{width: 230, height: 300, cursor: 'pointer', border: 'light'}}
                 className='p-3 d-flex flex-column'
             >
                 <Image src={process.env.REACT_APP_API_URL + device.img}></Image>
-                <div>{brand}</div>
                 <div className='d-flex flex-row align-item-center justify-content-between mt-2'>
                     <div>{brand}</div>
                     <div> {device.rating} <Image src={star} style = {{width: 20}}></Image></div>
