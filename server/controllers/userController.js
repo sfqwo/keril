@@ -49,6 +49,11 @@ class UserController{
   
 
     async check(req, res, next) {
+        const {id} = req.query
+        const result = User.findAll({where: {id}}).then(data =>{
+            console.log(data)
+            if(id) return res.json(data)
+        })
         const token = generateJWT(req.user.id, req.user.email, req.user.role)
         return res.json({token, role: req.user.role})
     }

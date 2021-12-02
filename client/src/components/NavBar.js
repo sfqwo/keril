@@ -42,6 +42,7 @@ const NavBar = observer(() => {
                                     onClick={(e) => {
                                         e.preventDefault();
                                         device.setClickSearch(true)
+                                        history.push(SHOP_ROUTE + "?name=" + device.lineSearch)
                                     }}
                                 >
                                     Поиск
