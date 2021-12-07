@@ -13,11 +13,19 @@ wrapper{
 
 subprojects {
   apply plugin: 'com.github.node-gradle.node'
+
+    node{
+        download = true
+        workDir = file("${rootProject.projectDir}/.gradle/nodejs")
+        npmWorkDir = file("${rootProject.projectDir}/.gradle/nodejs")
+    }
+
     if(project.name.equals("server")){
         apply plugin: 'base'
         apply plugin: 'org.flywaydb.flyway'
     }
 }
+
 
 
 logger.quiet("Project properties:\n" +  project.ext.getProperties()
