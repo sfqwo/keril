@@ -1,4 +1,5 @@
 .gradle
 gradle
+#gradle.properties
 .idea
 /**/node_modules
