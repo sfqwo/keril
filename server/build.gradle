@@ -1,0 +1,26 @@
+ext{
+    location = "filesystem:" + file(project.ext['migration']).toPath().toString()
+}
+
+flyway {
+    url = project.ext['flyway.url']
+    user = project.ext['flyway.user']
+    password = project.ext['flyway.password']
+    table = "flyway_schema_history"
+    locations = [ project.ext.location ]
+    configurations = [ 'flywayMigration' ]
+}
+configurations {
+    flywayMigration
+}
+dependencies {
+    flywayMigration "org.flywaydb:flyway-core:8.1.0"
+    flywayMigration  'org.postgresql:postgresql:42.2.2'
+}
+
+
+task migrate{
+    dependsOn flywayBaseline
+    dependsOn flywayMigrate
+    dependsOn flywayRepair
+}
