@@ -15,7 +15,7 @@ configurations {
 }
 dependencies {
     flywayMigration "org.flywaydb:flyway-core:8.1.0"
-    flywayMigration  'org.postgresql:postgresql:42.2.2'
+    flywayMigration 'org.postgresql:postgresql:42.3.1'
 }
 
 
@@ -23,4 +23,8 @@ task migrate{
     dependsOn flywayBaseline
     dependsOn flywayMigrate
     dependsOn flywayRepair
+}
+
+repositories {
+    mavenCentral()
 }
