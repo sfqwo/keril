@@ -7,28 +7,27 @@ plugins {
 group 'org.keril'
 version '1.0-SNAPSHOT'
 
-wrapper{
-    gradleVersion= '7.3.1'
+wrapper {
+    gradleVersion = '7.3.1'
 }
 
 subprojects {
-  apply plugin: 'com.github.node-gradle.node'
+    apply plugin: 'base'
+    apply plugin: 'com.github.node-gradle.node'
+    if (project.name.equals("server")) {
+        apply plugin: 'org.flywaydb.flyway'
+    }
 
-    node{
+    node {
         download = true
         workDir = file("${rootProject.projectDir}/.gradle/nodejs")
         npmWorkDir = file("${rootProject.projectDir}/.gradle/nodejs")
     }
 
-    if(project.name.equals("server")){
-        apply plugin: 'base'
-        apply plugin: 'org.flywaydb.flyway'
-    }
 }
 
 
-
-logger.quiet("Project properties:\n" +  project.ext.getProperties()
-        .sort {o1,o2-> o1.key <=> o2.key }
-        .collect {/$it.key=$it.value/ }
+logger.quiet("Project properties:\n" + project.ext.getProperties()
+        .sort { o1, o2 -> o1.key <=> o2.key }
+        .collect { /$it.key=$it.value/ }
         .join("\n"))

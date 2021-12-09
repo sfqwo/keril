@@ -1,11 +1,13 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
-        mavenLocal()
         mavenCentral()
+        mavenLocal()
     }
 }
 
 rootProject.name = 'keril'
-
 
 include 'client', 'server'

@@ -1,0 +1,8 @@
+task npmBuild(type: NpmTask){
+    dependsOn npmInstall
+    args = ["run", "build"]
+}
+
+build {
+    dependsOn npmBuild
+}
