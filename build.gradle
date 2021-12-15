@@ -18,6 +18,11 @@ subprojects {
         apply plugin: 'org.flywaydb.flyway'
     }
 
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
     node {
         download = true
         workDir = file("${rootProject.projectDir}/.gradle/nodejs")
