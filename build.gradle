@@ -27,6 +27,8 @@ subprojects {
         download = true
         workDir = file("${rootProject.projectDir}/.gradle/nodejs")
         npmWorkDir = file("${rootProject.projectDir}/.gradle/nodejs")
+        yarnWorkDir = file("${rootProject.projectDir}/.gradle/nodejs")
+        nodeProxySettings = ProxySettings.SMART
     }
 
 }

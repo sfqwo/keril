@@ -1,9 +1,9 @@
 FROM node:lts-alpine
 WORKDIR /usr/src/app
 COPY package.json ./
-COPY yarn.lock ./
-COPY --chown=node:node db/ /usr/src/app/db
+COPY --chown=node:node public/ /usr/src/app/public
 COPY --chown=node:node src/ /usr/src/app/src
 RUN yarn install
+RUN chown -R node /usr/src/app/node_modules
 USER node
 CMD "yarn" "start"

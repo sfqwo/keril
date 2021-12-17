@@ -1,8 +1,14 @@
 task npmBuild(type: NpmTask){
-    dependsOn npmInstall
+//    dependsOn npmInstall
+    args = ["run", "build"]
+}
+
+task yarnBuild(type: YarnTask){
+    group 'yarn'
+    dependsOn yarn
     args = ["run", "build"]
 }
 
 build {
-    dependsOn npmBuild
+    dependsOn yarnBuild
 }
