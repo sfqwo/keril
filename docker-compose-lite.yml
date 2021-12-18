@@ -9,7 +9,7 @@ services:
         # #add ".env" file DockerFile before build process. After build env cannot edit
         # See config
         - PATH_ENV=./.env
-    container_name: CLIENT_KERIL
+    container_name: CLIENT_KERIL_LITE
     networks:
       - network_lite
     links:
@@ -25,7 +25,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    container_name: SERVER_KERIL
+    container_name: SERVER_KERIL_LITE
     networks:
       - network_lite
     environment:
@@ -45,7 +45,7 @@ services:
         condition: service_healthy
   postgres:
     image: postgres:14
-    container_name: DB_KERIL
+    container_name: DB_KERIL_LITE
     networks:
       - network_lite
     healthcheck:
@@ -67,7 +67,7 @@ services:
     build:
       context: ./client
       dockerfile: ./node_lite.Dockerfile
-    container_name: CLIENT_NODE_KERIL
+    container_name: CLIENT_NODE_KERIL_LITE
     networks:
       - network_lite
     links:
