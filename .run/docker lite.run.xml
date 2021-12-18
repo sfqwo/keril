@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="docker keril lite" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+    <deployment type="docker-compose.yml">
+      <settings>
+        <option name="composeProjectName" value="keril_lite" />
+        <option name="envFilePath" value="" />
+        <option name="commandLineOptions" value="--build" />
+        <option name="sourceFilePath" value="docker-compose-lite.yml" />
+      </settings>
+    </deployment>
+    <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="yarnBuild" externalProjectPath="$PROJECT_DIR$/client" vmOptions="" scriptParameters="" />
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="yarn" externalProjectPath="$PROJECT_DIR$/server" vmOptions="" scriptParameters="" />
+    </method>
+  </configuration>
+</component>
