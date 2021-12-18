@@ -1,26 +1,26 @@
 version: "3.9"
 services:
-  client-lite:
-    build:
-      context: ./client
-      dockerfile: lite.Dockerfile
-      args:
-        # REACT_APP_API_URL=http://server:5000/, where name server - service, 5000 - inner port
-        # #add ".env" file DockerFile before build process. After build env cannot edit
-        # See config
-        - PATH_ENV=./.env
-    container_name: CLIENT_KERIL_LITE
-    networks:
-      - network_lite
-    links:
-      - server
-    depends_on:
-      - server
-    ports:
-      - 5001:80
-    volumes:
-      - ./client/config/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - html-lite:/usr/share/nginx/html
+#  client-lite:
+#    build:
+#      context: ./client
+#      dockerfile: lite.Dockerfile
+#      args:
+#        # REACT_APP_API_URL=http://server:5000/, where name server - service, 5000 - inner port
+#        # #add ".env" file DockerFile before build process. After build env cannot edit
+#        # See config
+#        - PATH_ENV=./.env
+#    container_name: CLIENT_KERIL_LITE
+#    networks:
+#      - network_lite
+#    links:
+#      - server
+#    depends_on:
+#      - server
+#    ports:
+#      - 5001:80
+#    volumes:
+#      - ./client/config/nginx/default.conf:/etc/nginx/conf.d/default.conf
+#      - html-lite:/usr/share/nginx/html
   server:
     build:
       context: ./server
