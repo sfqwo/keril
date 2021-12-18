@@ -25,7 +25,7 @@ const NavBar = observer(() => {
                             style={{color: 'white'}}
                             onClick={() => history.push(SHOP_ROUTE)}
                         >
-                            KERIL
+                            SHOP
                         </NavLink>
                         <form
                             className="form-inline"
